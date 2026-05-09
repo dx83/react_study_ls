@@ -6,6 +6,7 @@ const Study_Prev = () => {
   return (
     <>
       <React_DOM />
+      <Styled_Comp />
     </>
 
   )
@@ -14,7 +15,7 @@ const Study_Prev = () => {
 const Study_Cur = () => {
   return (
     <>
-      <Styled_Comp />
+      
     </>
   )
 }
