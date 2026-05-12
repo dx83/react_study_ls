@@ -1,4 +1,3 @@
-import React from 'react';
 import styled from 'styled-components';
 
 const ReactBasicButton = (props) => {// 기본 css와 문법이 다름
