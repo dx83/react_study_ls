@@ -68,9 +68,9 @@ const Study_Redux = () => {
     return (
         <>
             <h1>React Redux</h1>
-            <div id="container">
+            <div id="Redux_container">
                 <h1>Root : {number}</h1>
-                <div id="grid">
+                <div id="Redux_grid">
                     <Left1 number={number} />
                     <Right1 onIncrease={() => {
                         setNumber(number + 1);

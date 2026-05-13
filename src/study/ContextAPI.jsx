@@ -1,5 +1,4 @@
-import React, { createContext, useContext } from 'react';
-import "./style.css";
+import { createContext, useContext } from 'react';
 
 //const themeDefault = { border: '10px solid green' };
 const themeDefault = { border: '10px solid red' };
@@ -42,7 +41,7 @@ const ContextAPI = () => {
 
     return (
         <themeContext.Provider value={{ border: '10px solid blue'}}>
-        <div className="root" style={theme}>
+        <div className="ContextAPI_root" style={theme}>
             <h1>Hello World!</h1>
             <Sub1 />
         </div>

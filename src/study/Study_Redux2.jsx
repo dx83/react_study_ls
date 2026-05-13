@@ -1,6 +1,23 @@
-import { useState } from "react"
+import { Provider, useDispatch, useSelector } from "react-redux";
+import { createStore } from "redux";
 
-const Left1 = (props) => {
+//==========================================
+const reducer = (currentState, action) => {
+    if (currentState === undefined) {
+        return {
+            number: 1,
+        };
+    }
+    const newState = { ...currentState };
+    if (action.type === 'PLUS') {
+        newState.number++;
+    }
+    return newState;
+}
+const store = createStore(reducer);
+//==========================================
+
+const Left1 = () => {
     return (
         <div>
             <h1>Left1</h1>
@@ -9,7 +26,9 @@ const Left1 = (props) => {
     )
 }
 
-const Left2 = (props) => {
+const Left2 = () => {
+    console.log('2');
+
     return (
         <div>
             <h1>Left2</h1>
@@ -18,15 +37,18 @@ const Left2 = (props) => {
     )
 }
 
-const Left3 = (props) => {
+const Left3 = () => {
+    const number = useSelector((state) => state.number);
+    console.log('3');
+
     return (
         <div>
-            <h1>Left3</h1>
+            <h1>Left3: {number}</h1>
         </div>
     )
 }
 
-const Right1 = (props) => {
+const Right1 = () => {
     return (
         <div>
             <h1>Right1</h1>
@@ -35,7 +57,7 @@ const Right1 = (props) => {
     )
 }
 
-const Right2 = (props) => {
+const Right2 = () => {
     return (
         <div>
             <h1>Right2</h1>
@@ -44,29 +66,34 @@ const Right2 = (props) => {
     )
 }
 
-const Right3 = (props) => {
+const Right3 = () => {
+    const dispatch = useDispatch();
+
     return (
         <div>
             <h1>Right3</h1>
             <input
                 type="button"
                 value="+"
-                onClick={() => {}} />
+                onClick={() => {
+                    dispatch({ type: 'PLUS' });
+                }} />
         </div>
     )
 }
 
 const Study_Redux2 = () => {
-    const [number, setNumber] = useState(1);
 
     return (
         <>
-            <h1>React Redux</h1>
-            <div id="container">
-                <h1>Root : {number}</h1>
-                <div id="grid">
-                    <Left1 />
-                    <Right1 />
+            <h1>React Redux2</h1>
+            <div id="Redux_container">
+                <h1>Root</h1>
+                <div id="Redux_grid">
+                    <Provider store={store}>
+                        <Left1 />
+                        <Right1 />
+                    </Provider>
                 </div>
             </div>
 
