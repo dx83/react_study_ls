@@ -8,6 +8,7 @@ import Study_Redux from './study/Study_Redux';
 import Study_Redux2 from './study/Study_Redux2';
 import Study_PapaParse from './study/Study_PapaParse';
 import Redux_Toolkit from './study/Redux_Toolkit';
+import Redux_Toolkit2 from "./study/Redux_Toolkit2";
 
 const Study_Prev = () => {
   return (
@@ -19,6 +20,7 @@ const Study_Prev = () => {
       <Study_Reducer />
       <Study_Redux />
       <Study_Redux2 />
+      <Redux_Toolkit />
 
 
       
@@ -31,7 +33,7 @@ const Study_Prev = () => {
 const Study_Cur = () => {
   return (
     <>
-      <Redux_Toolkit />
+      <Redux_Toolkit2 />
     </>
   )
 }
